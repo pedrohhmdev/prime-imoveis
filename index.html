@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="prime-imoveis-favicon.png">
+
+    <title>Prime Imóveis</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+
+        <span>PRIME</span>
+        <small>IMÓVEIS</small>
+
+    </a>
+
+
+    <nav>
+
+        <a href="#inicio">Início</a>
+
+        <a href="#imoveis">Imóveis</a>
+
+        <a href="#sobre">Sobre</a>
+
+        <a href="#contato">Contato</a>
+
+    </nav>
+
+
+    <a
+        href="#contato"
+        class="btn-header"
+    >
+        Fale conosco
+    </a>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            ENCONTRE SEU NOVO LAR
+        </span>
+
+
+        <h1>
+
+            O imóvel ideal<br>
+
+            <span>para você.</span>
+
+        </h1>
+
+
+        <p>
+
+            Encontre casas, apartamentos e imóveis
+            selecionados nas melhores regiões.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#imoveis"
+                class="btn-primary"
+            >
+                Ver imóveis
+            </a>
+
+
+            <a
+                href="#sobre"
+                class="btn-secondary"
+            >
+                Conheça a Prime
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BUSCA ================= -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+
+        <div class="search-item">
+
+            <label>
+                Localização
+            </label>
+
+
+            <select id="homeLocalizacao">
+
+                <option value="">
+                    Todas as cidades
+                </option>
+
+                <option value="Barueri">
+                    Barueri
+                </option>
+
+                <option value="São Paulo">
+                    São Paulo
+                </option>
+
+                <option value="Osasco">
+                    Osasco
+                </option>
+
+                <option value="Santo André">
+                    Santo André
+                </option>
+
+                <option value="Guarulhos">
+                    Guarulhos
+                </option>
+
+                <option value="Carapicuíba">
+                    Carapicuíba
+                </option>
+
+                <option value="São Bernardo do Campo">
+                    São Bernardo do Campo
+                </option>
+
+                <option value="São Caetano do Sul">
+                    São Caetano do Sul
+                </option>
+
+                <option value="Campinas">
+                    Campinas
+                </option>
+
+                <option value="Sorocaba">
+                    Sorocaba
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="search-item">
+
+            <label>
+                Tipo
+            </label>
+
+
+            <select id="homeTipo">
+
+                <option value="">
+                    Todos
+                </option>
+
+                <option value="Casa">
+                    Casa
+                </option>
+
+                <option value="Apartamento">
+                    Apartamento
+                </option>
+
+                <option value="Sobrado">
+                    Sobrado
+                </option>
+
+                <option value="Studio">
+                    Studio
+                </option>
+
+                <option value="Cobertura">
+                    Cobertura
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="search-item">
+
+            <label>
+                Finalidade
+            </label>
+
+
+            <select id="homeFinalidade">
+
+                <option value="">
+                    Comprar ou alugar
+                </option>
+
+                <option value="Venda">
+                    Venda
+                </option>
+
+                <option value="Aluguel">
+                    Aluguel
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <button
+            class="btn-search"
+            onclick="buscarImoveis()"
+        >
+            Buscar imóveis
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= IMÓVEIS ================= -->
+
+<section
+    class="properties-section"
+    id="imoveis"
+>
+
+
+    <div class="section-header">
+
+
+        <div>
+
+            <span class="section-tag">
+                DESTAQUES
+            </span>
+
+
+            <h2>
+                Imóveis em destaque
+            </h2>
+
+
+            <p>
+                Algumas das melhores oportunidades disponíveis.
+            </p>
+
+        </div>
+
+
+
+        <a
+            href="imoveis.html"
+            class="see-all"
+        >
+            Ver todos os imóveis →
+        </a>
+
+
+    </div>
+
+
+
+    <!-- CARROSSEL -->
+
+    <div class="carousel-wrapper">
+
+
+        <button
+            class="carousel-button left"
+            onclick="rolarImoveis(-1)"
+            aria-label="Imóveis anteriores"
+        >
+            ←
+        </button>
+
+
+
+        <div
+            class="properties-carousel"
+            id="carousel"
+        >
+
+            <!-- CARDS INSERIDOS PELO JAVASCRIPT -->
+
+        </div>
+
+
+
+        <button
+            class="carousel-button right"
+            onclick="rolarImoveis(1)"
+            aria-label="Próximos imóveis"
+        >
+            →
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SOBRE ================= -->
+
+<section
+    class="about-section"
+    id="sobre"
+>
+
+
+    <div class="about-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+            alt="Imóvel moderno"
+        >
+
+    </div>
+
+
+
+    <div class="about-content">
+
+        <span class="section-tag">
+            SOBRE NÓS
+        </span>
+
+
+        <h2>
+
+            Mais do que imóveis.<br>
+
+            <span>Novos começos.</span>
+
+        </h2>
+
+
+        <p>
+
+            A Prime Imóveis trabalha para tornar a busca
+            pelo imóvel ideal mais simples, segura e
+            transparente.
+
+        </p>
+
+
+        <p>
+
+            Nossa equipe acompanha cada etapa do processo,
+            desde a escolha do imóvel até a negociação.
+
+        </p>
+
+
+        <a
+            href="#contato"
+            class="btn-primary"
+        >
+            Fale com um corretor
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTATO ================= -->
+
+<section
+    class="contact-section"
+    id="contato"
+>
+
+
+    <div>
+
+        <span class="section-tag">
+            FALE CONOSCO
+        </span>
+
+
+        <h2>
+            Encontrou seu imóvel?
+        </h2>
+
+
+        <p>
+
+            Entre em contato com nossa equipe.
+            Podemos ajudar você a encontrar a melhor opção.
+
+        </p>
+
+    </div>
+
+
+
+    <a
+        href="https://wa.me/5511999999999"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-whatsapp"
+    >
+        Conversar no WhatsApp
+    </a>
+
+
+</section>
+
+</main>
+
+
+
+<!-- ================= MODAL ================= -->
+
+<div
+    class="modal"
+    id="modal"
+>
+
+
+    <div class="modal-content">
+
+
+        <button
+            class="modal-close"
+            onclick="fecharModal()"
+            aria-label="Fechar"
+        >
+            ×
+        </button>
+
+
+        <img
+            id="modalImagem"
+            src=""
+            alt=""
+        >
+
+
+        <div class="modal-info">
+
+
+            <span id="modalFinalidade"></span>
+
+
+            <h2 id="modalTitulo"></h2>
+
+
+            <p id="modalLocalizacao"></p>
+
+
+            <div class="modal-details">
+
+                <span id="modalQuartos"></span>
+
+                <span id="modalBanheiros"></span>
+
+                <span id="modalArea"></span>
+
+            </div>
+
+
+            <strong id="modalPreco"></strong>
+
+
+            <a
+                id="modalWhatsapp"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary"
+            >
+                Tenho interesse
+            </a>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+
+    <a href="index.html" class="logo">
+
+        <span>PRIME</span>
+
+        <small>IMÓVEIS</small>
+
+    </a>
+
+
+    <p>
+        © 2026 Prime Imóveis. Todos os direitos reservados.
+    </p>
+
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
