@@ -2,71 +2,51 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="prime-imoveis-favicon.png">
+    <link
+        rel="icon"
+        type="image/png"
+        href="prime-imoveis-favicon.png"
+    >
 
     <title>Prime Imóveis</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
-
 </head>
 
-
 <body>
-
-
-<!-- ================= HEADER ================= -->
 
 <header class="header">
 
     <a href="index.html" class="logo">
-
         <span>PRIME</span>
         <small>IMÓVEIS</small>
-
     </a>
 
-
     <nav>
-
         <a href="#inicio">Início</a>
-
         <a href="#imoveis">Imóveis</a>
-
         <a href="#sobre">Sobre</a>
-
+        <a href="#feedbacks">Depoimentos</a>
         <a href="#contato">Contato</a>
-
     </nav>
 
-
-    <a
-        href="#contato"
-        class="btn-header"
-    >
+    <a href="#contato" class="btn-header">
         Fale conosco
     </a>
 
 </header>
-
-
-
-<!-- ================= HERO ================= -->
 
 <main>
 
@@ -78,38 +58,23 @@
             ENCONTRE SEU NOVO LAR
         </span>
 
-
         <h1>
-
             O imóvel ideal<br>
-
             <span>para você.</span>
-
         </h1>
 
-
         <p>
-
             Encontre casas, apartamentos e imóveis
             selecionados nas melhores regiões.
-
         </p>
-
 
         <div class="hero-buttons">
 
-            <a
-                href="#imoveis"
-                class="btn-primary"
-            >
+            <a href="#imoveis" class="btn-primary">
                 Ver imóveis
             </a>
 
-
-            <a
-                href="#sobre"
-                class="btn-secondary"
-            >
+            <a href="#sobre" class="btn-secondary">
                 Conheça a Prime
             </a>
 
@@ -119,139 +84,66 @@
 
 </section>
 
-
-
-<!-- ================= BUSCA ================= -->
-
 <section class="search-section">
 
     <div class="search-box">
 
-
         <div class="search-item">
 
-            <label>
-                Localização
-            </label>
-
+            <label>Localização</label>
 
             <select id="homeLocalizacao">
 
-                <option value="">
-                    Todas as cidades
-                </option>
+                <option value="">Todas as cidades</option>
 
-                <option value="Barueri">
-                    Barueri
-                </option>
-
-                <option value="São Paulo">
-                    São Paulo
-                </option>
-
-                <option value="Osasco">
-                    Osasco
-                </option>
-
-                <option value="Santo André">
-                    Santo André
-                </option>
-
-                <option value="Guarulhos">
-                    Guarulhos
-                </option>
-
-                <option value="Carapicuíba">
-                    Carapicuíba
-                </option>
-
-                <option value="São Bernardo do Campo">
-                    São Bernardo do Campo
-                </option>
-
-                <option value="São Caetano do Sul">
-                    São Caetano do Sul
-                </option>
-
-                <option value="Campinas">
-                    Campinas
-                </option>
-
-                <option value="Sorocaba">
-                    Sorocaba
-                </option>
+                <option value="Barueri">Barueri</option>
+                <option value="São Paulo">São Paulo</option>
+                <option value="Osasco">Osasco</option>
+                <option value="Santo André">Santo André</option>
+                <option value="Guarulhos">Guarulhos</option>
+                <option value="Carapicuíba">Carapicuíba</option>
+                <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                <option value="São Caetano do Sul">São Caetano do Sul</option>
+                <option value="Campinas">Campinas</option>
+                <option value="Sorocaba">Sorocaba</option>
+                <option value="Santana de Parnaíba">Santana de Parnaíba</option>
 
             </select>
 
         </div>
 
-
-
         <div class="search-item">
 
-            <label>
-                Tipo
-            </label>
-
+            <label>Tipo</label>
 
             <select id="homeTipo">
 
-                <option value="">
-                    Todos
-                </option>
+                <option value="">Todos</option>
 
-                <option value="Casa">
-                    Casa
-                </option>
-
-                <option value="Apartamento">
-                    Apartamento
-                </option>
-
-                <option value="Sobrado">
-                    Sobrado
-                </option>
-
-                <option value="Studio">
-                    Studio
-                </option>
-
-                <option value="Cobertura">
-                    Cobertura
-                </option>
+                <option value="Casa">Casa</option>
+                <option value="Apartamento">Apartamento</option>
+                <option value="Sobrado">Sobrado</option>
+                <option value="Studio">Studio</option>
+                <option value="Cobertura">Cobertura</option>
 
             </select>
 
         </div>
-
-
 
         <div class="search-item">
 
-            <label>
-                Finalidade
-            </label>
-
+            <label>Finalidade</label>
 
             <select id="homeFinalidade">
 
-                <option value="">
-                    Comprar ou alugar
-                </option>
+                <option value="">Comprar ou alugar</option>
 
-                <option value="Venda">
-                    Venda
-                </option>
-
-                <option value="Aluguel">
-                    Aluguel
-                </option>
+                <option value="Venda">Venda</option>
+                <option value="Aluguel">Aluguel</option>
 
             </select>
 
         </div>
-
-
 
         <button
             class="btn-search"
@@ -260,23 +152,13 @@
             Buscar imóveis
         </button>
 
-
     </div>
 
 </section>
 
-
-
-<!-- ================= IMÓVEIS ================= -->
-
-<section
-    class="properties-section"
-    id="imoveis"
->
-
+<section class="properties-section" id="imoveis">
 
     <div class="section-header">
-
 
         <div>
 
@@ -284,11 +166,9 @@
                 DESTAQUES
             </span>
 
-
             <h2>
                 Imóveis em destaque
             </h2>
-
 
             <p>
                 Algumas das melhores oportunidades disponíveis.
@@ -296,24 +176,13 @@
 
         </div>
 
-
-
-        <a
-            href="imoveis.html"
-            class="see-all"
-        >
+        <a href="imoveis.html" class="see-all">
             Ver todos os imóveis →
         </a>
 
-
     </div>
 
-
-
-    <!-- CARROSSEL -->
-
     <div class="carousel-wrapper">
-
 
         <button
             class="carousel-button left"
@@ -323,18 +192,10 @@
             ←
         </button>
 
-
-
         <div
             class="properties-carousel"
             id="carousel"
-        >
-
-            <!-- CARDS INSERIDOS PELO JAVASCRIPT -->
-
-        </div>
-
-
+        ></div>
 
         <button
             class="carousel-button right"
@@ -344,31 +205,21 @@
             →
         </button>
 
-
     </div>
 
 </section>
 
-
-
-<!-- ================= SOBRE ================= -->
-
-<section
-    class="about-section"
-    id="sobre"
->
-
+<section class="about-section" id="sobre">
 
     <div class="about-image">
 
         <img
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
             alt="Imóvel moderno"
+            loading="lazy"
         >
 
     </div>
-
-
 
     <div class="about-content">
 
@@ -376,37 +227,22 @@
             SOBRE NÓS
         </span>
 
-
         <h2>
-
             Mais do que imóveis.<br>
-
             <span>Novos começos.</span>
-
         </h2>
 
-
         <p>
-
-            A Prime Imóveis trabalha para tornar a busca
-            pelo imóvel ideal mais simples, segura e
-            transparente.
-
+            A Prime Imóveis trabalha para tornar a busca pelo
+            imóvel ideal mais simples, segura e transparente.
         </p>
 
-
         <p>
-
             Nossa equipe acompanha cada etapa do processo,
             desde a escolha do imóvel até a negociação.
-
         </p>
 
-
-        <a
-            href="#contato"
-            class="btn-primary"
-        >
+        <a href="#contato" class="btn-primary">
             Fale com um corretor
         </a>
 
@@ -414,15 +250,273 @@
 
 </section>
 
+<section class="testimonials-section" id="feedbacks">
 
+    <div class="section-header">
 
-<!-- ================= CONTATO ================= -->
+        <div>
 
-<section
-    class="contact-section"
-    id="contato"
->
+            <span class="section-tag">
+                DEPOIMENTOS
+            </span>
 
+            <h2>
+                O que nossos clientes dizem
+            </h2>
+
+            <p>
+                Experiências de quem encontrou seu próximo imóvel com a Prime.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="testimonials-wrapper">
+
+        <button
+            class="testimonial-button left"
+            onclick="rolarFeedbacks(-1)"
+            aria-label="Depoimentos anteriores"
+        >
+            ←
+        </button>
+
+        <div
+            class="testimonials-carousel"
+            id="feedbacksCarousel"
+        >
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-top">
+
+                    <div class="testimonial-avatar">
+                        MC
+                    </div>
+
+                    <div>
+                        <h3>Mariana Costa</h3>
+                        <span>São Paulo, SP</span>
+                    </div>
+
+                </div>
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “O atendimento foi excelente do início ao fim.
+                    Encontraram exatamente o tipo de imóvel que eu
+                    estava procurando.”
+                </p>
+
+            </article>
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-top">
+
+                    <div class="testimonial-avatar">
+                        RA
+                    </div>
+
+                    <div>
+                        <h3>Rafael Almeida</h3>
+                        <span>Barueri, SP</span>
+                    </div>
+
+                </div>
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Processo muito tranquilo e transparente.
+                    A equipe foi atenciosa e tirou todas as
+                    minhas dúvidas.”
+                </p>
+
+            </article>
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-top">
+
+                    <div class="testimonial-avatar">
+                        CF
+                    </div>
+
+                    <div>
+                        <h3>Camila Ferreira</h3>
+                        <span>Osasco, SP</span>
+                    </div>
+
+                </div>
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Gostei muito da experiência. Recebi boas opções
+                    e consegui encontrar um imóvel que realmente
+                    combinava comigo.”
+                </p>
+
+            </article>
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-top">
+
+                    <div class="testimonial-avatar">
+                        LM
+                    </div>
+
+                    <div>
+                        <h3>Lucas Martins</h3>
+                        <span>Santo André, SP</span>
+                    </div>
+
+                </div>
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Atendimento rápido, profissional e sem aquela
+                    pressão que normalmente encontramos na hora
+                    de procurar um imóvel.”
+                </p>
+
+            </article>
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-top">
+
+                    <div class="testimonial-avatar">
+                        JS
+                    </div>
+
+                    <div>
+                        <h3>Juliana Santos</h3>
+                        <span>Guarulhos, SP</span>
+                    </div>
+
+                </div>
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “A Prime tornou todo o processo muito mais simples.
+                    Desde a primeira conversa até a escolha do imóvel.”
+                </p>
+
+            </article>
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-top">
+
+                    <div class="testimonial-avatar">
+                        AO
+                    </div>
+
+                    <div>
+                        <h3>André Oliveira</h3>
+                        <span>Campinas, SP</span>
+                    </div>
+
+                </div>
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Equipe muito prestativa e profissional.
+                    Fiquei bastante satisfeito com todo
+                    o atendimento.”
+                </p>
+
+            </article>
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-top">
+
+                    <div class="testimonial-avatar">
+                        BR
+                    </div>
+
+                    <div>
+                        <h3>Beatriz Rocha</h3>
+                        <span>São Caetano do Sul, SP</span>
+                    </div>
+
+                </div>
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Foi uma experiência muito boa. As opções
+                    apresentadas estavam de acordo com o que
+                    eu tinha pedido.”
+                </p>
+
+            </article>
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-top">
+
+                    <div class="testimonial-avatar">
+                        FM
+                    </div>
+
+                    <div>
+                        <h3>Felipe Mendes</h3>
+                        <span>Sorocaba, SP</span>
+                    </div>
+
+                </div>
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Atendimento excelente e bastante atenção
+                    aos detalhes. Recomendo para quem está
+                    procurando um novo imóvel.”
+                </p>
+
+            </article>
+
+        </div>
+
+        <button
+            class="testimonial-button right"
+            onclick="rolarFeedbacks(1)"
+            aria-label="Próximos depoimentos"
+        >
+            →
+        </button>
+
+    </div>
+
+</section>
+
+<section class="contact-section" id="contato">
 
     <div>
 
@@ -430,22 +524,16 @@
             FALE CONOSCO
         </span>
 
-
         <h2>
             Encontrou seu imóvel?
         </h2>
 
-
         <p>
-
             Entre em contato com nossa equipe.
             Podemos ajudar você a encontrar a melhor opção.
-
         </p>
 
     </div>
-
-
 
     <a
         href="https://wa.me/5511999999999"
@@ -456,65 +544,90 @@
         Conversar no WhatsApp
     </a>
 
-
 </section>
 
 </main>
 
-
-
-<!-- ================= MODAL ================= -->
-
 <div
     class="modal"
     id="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitulo"
 >
 
-
     <div class="modal-content">
-
 
         <button
             class="modal-close"
             onclick="fecharModal()"
-            aria-label="Fechar"
+            aria-label="Fechar detalhes"
         >
             ×
         </button>
 
+        <div class="modal-gallery">
 
-        <img
-            id="modalImagem"
-            src=""
-            alt=""
-        >
+            <button
+                class="gallery-arrow gallery-prev"
+                onclick="fotoAnterior(event)"
+                aria-label="Foto anterior"
+            >
+                ‹
+            </button>
 
+            <div
+                class="gallery-image-container"
+                id="galleryContainer"
+            >
+
+                <img
+                    id="modalImagem"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+            <button
+                class="gallery-arrow gallery-next"
+                onclick="proximaFoto(event)"
+                aria-label="Próxima foto"
+            >
+                ›
+            </button>
+
+            <div
+                class="gallery-counter"
+                id="galleryCounter"
+            >
+                1 / 5
+            </div>
+
+            <div
+                class="gallery-dots"
+                id="galleryDots"
+            ></div>
+
+        </div>
 
         <div class="modal-info">
 
-
             <span id="modalFinalidade"></span>
-
 
             <h2 id="modalTitulo"></h2>
 
-
             <p id="modalLocalizacao"></p>
-
 
             <div class="modal-details">
 
                 <span id="modalQuartos"></span>
-
                 <span id="modalBanheiros"></span>
-
                 <span id="modalArea"></span>
 
             </div>
 
-
             <strong id="modalPreco"></strong>
-
 
             <a
                 id="modalWhatsapp"
@@ -526,40 +639,28 @@
                 Tenho interesse
             </a>
 
-
         </div>
 
     </div>
 
 </div>
 
-
-
-<!-- ================= FOOTER ================= -->
-
 <footer>
-
 
     <a href="index.html" class="logo">
 
         <span>PRIME</span>
-
         <small>IMÓVEIS</small>
 
     </a>
-
 
     <p>
         © 2026 Prime Imóveis. Todos os direitos reservados.
     </p>
 
-
 </footer>
-
-
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

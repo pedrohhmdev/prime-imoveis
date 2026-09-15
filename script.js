@@ -1,105 +1,154 @@
-/* =====================================================
-   BANCO DE IMÓVEIS
-===================================================== */
+/* =========================================================
+   PRIME IMÓVEIS
+   SCRIPT.JS
+========================================================= */
+
+
+/* =========================================================
+   IMAGENS
+========================================================= */
+
+const imagensImoveis = [
+
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600047509782-20d39509f3f5?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600585154363-67a0a0b7b2e1?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600585153490-76fb20a32601?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600607688960-e095ff83135c?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=1000&q=85"
+
+];
+
+const imagemFallback =
+    imagensImoveis[0];
+
+
+/* =========================================================
+   IMÓVEIS
+========================================================= */
 
 const imoveis = [
 
     {
         id: 1,
-        titulo: "Casa Moderna com Piscina",
-        tipo: "Casa",
+        titulo: "Apartamento Moderno",
+        tipo: "Apartamento",
         finalidade: "Venda",
         cidade: "Barueri",
         bairro: "Alphaville",
-        preco: "R$ 1.850.000",
-        quartos: "4 quartos",
-        banheiros: "3 banheiros",
-        area: "280 m²",
-        imagem: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+        preco: "R$ 850.000",
+        quartos: 3,
+        banheiros: 2,
+        area: "105 m²",
+        imagem: imagensImoveis[0]
     },
 
     {
         id: 2,
-        titulo: "Apartamento Alto Padrão",
-        tipo: "Apartamento",
+        titulo: "Casa Contemporânea",
+        tipo: "Casa",
         finalidade: "Venda",
         cidade: "São Paulo",
-        bairro: "Vila Mariana",
-        preco: "R$ 980.000",
-        quartos: "3 quartos",
-        banheiros: "2 banheiros",
-        area: "120 m²",
-        imagem: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
+        bairro: "Morumbi",
+        preco: "R$ 1.250.000",
+        quartos: 4,
+        banheiros: 3,
+        area: "220 m²",
+        imagem: imagensImoveis[1]
     },
 
     {
         id: 3,
-        titulo: "Apartamento Moderno",
-        tipo: "Apartamento",
-        finalidade: "Aluguel",
-        cidade: "Osasco",
-        bairro: "Centro",
-        preco: "R$ 2.800/mês",
-        quartos: "2 quartos",
-        banheiros: "2 banheiros",
-        area: "75 m²",
-        imagem: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80"
-    },
-
-    {
-        id: 4,
-        titulo: "Sobrado Familiar",
-        tipo: "Sobrado",
-        finalidade: "Venda",
-        cidade: "São Paulo",
-        bairro: "Tatuapé",
-        preco: "R$ 890.000",
-        quartos: "3 quartos",
-        banheiros: "3 banheiros",
-        area: "180 m²",
-        imagem: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=80"
-    },
-
-    {
-        id: 5,
-        titulo: "Studio Novo",
+        titulo: "Studio Premium",
         tipo: "Studio",
         finalidade: "Aluguel",
         cidade: "São Paulo",
         bairro: "Pinheiros",
-        preco: "R$ 2.400/mês",
-        quartos: "1 quarto",
-        banheiros: "1 banheiro",
-        area: "38 m²",
-        imagem: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
+        preco: "R$ 3.200/mês",
+        quartos: 1,
+        banheiros: 1,
+        area: "42 m²",
+        imagem: imagensImoveis[2]
+    },
+
+    {
+        id: 4,
+        titulo: "Apartamento Espaçoso",
+        tipo: "Apartamento",
+        finalidade: "Venda",
+        cidade: "Osasco",
+        bairro: "Centro",
+        preco: "R$ 520.000",
+        quartos: 3,
+        banheiros: 2,
+        area: "87 m²",
+        imagem: imagensImoveis[3]
+    },
+
+    {
+        id: 5,
+        titulo: "Sobrado Familiar",
+        tipo: "Sobrado",
+        finalidade: "Venda",
+        cidade: "Santo André",
+        bairro: "Jardim",
+        preco: "R$ 780.000",
+        quartos: 3,
+        banheiros: 3,
+        area: "180 m²",
+        imagem: imagensImoveis[4]
     },
 
     {
         id: 6,
-        titulo: "Casa Ampla com Jardim",
-        tipo: "Casa",
-        finalidade: "Venda",
-        cidade: "Santo André",
-        bairro: "Jardim",
-        preco: "R$ 750.000",
-        quartos: "3 quartos",
-        banheiros: "2 banheiros",
-        area: "210 m²",
-        imagem: "https://images.unsplash.com/photo-1605146769289-440113cc3d00?auto=format&fit=crop&w=900&q=80"
+        titulo: "Apartamento com Varanda",
+        tipo: "Apartamento",
+        finalidade: "Aluguel",
+        cidade: "Guarulhos",
+        bairro: "Vila Augusta",
+        preco: "R$ 2.400/mês",
+        quartos: 2,
+        banheiros: 2,
+        area: "70 m²",
+        imagem: imagensImoveis[5]
     },
 
     {
         id: 7,
-        titulo: "Apartamento com Varanda",
-        tipo: "Apartamento",
+        titulo: "Casa com Piscina",
+        tipo: "Casa",
         finalidade: "Venda",
-        cidade: "Guarulhos",
-        bairro: "Vila Augusta",
-        preco: "R$ 520.000",
-        quartos: "2 quartos",
-        banheiros: "2 banheiros",
-        area: "68 m²",
-        imagem: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=80"
+        cidade: "Carapicuíba",
+        bairro: "Granja Viana",
+        preco: "R$ 1.080.000",
+        quartos: 4,
+        banheiros: 4,
+        area: "280 m²",
+        imagem: imagensImoveis[6]
     },
 
     {
@@ -107,329 +156,384 @@ const imoveis = [
         titulo: "Cobertura Duplex",
         tipo: "Cobertura",
         finalidade: "Venda",
-        cidade: "São Paulo",
-        bairro: "Moema",
-        preco: "R$ 2.400.000",
-        quartos: "4 quartos",
-        banheiros: "4 banheiros",
-        area: "310 m²",
-        imagem: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80"
+        cidade: "São Bernardo do Campo",
+        bairro: "Centro",
+        preco: "R$ 1.150.000",
+        quartos: 4,
+        banheiros: 3,
+        area: "210 m²",
+        imagem: imagensImoveis[7]
     },
 
     {
         id: 9,
-        titulo: "Apartamento Compacto",
+        titulo: "Apartamento Elegante",
         tipo: "Apartamento",
-        finalidade: "Aluguel",
-        cidade: "Carapicuíba",
-        bairro: "Centro",
-        preco: "R$ 1.700/mês",
-        quartos: "2 quartos",
-        banheiros: "1 banheiro",
-        area: "55 m²",
-        imagem: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80"
+        finalidade: "Venda",
+        cidade: "São Caetano do Sul",
+        bairro: "Santa Paula",
+        preco: "R$ 690.000",
+        quartos: 3,
+        banheiros: 2,
+        area: "95 m²",
+        imagem: imagensImoveis[8]
     },
 
     {
         id: 10,
-        titulo: "Casa em Condomínio",
+        titulo: "Casa Moderna",
         tipo: "Casa",
         finalidade: "Venda",
-        cidade: "Sorocaba",
-        bairro: "Campolim",
-        preco: "R$ 1.150.000",
-        quartos: "3 quartos",
-        banheiros: "3 banheiros",
-        area: "240 m²",
-        imagem: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80"
+        cidade: "Campinas",
+        bairro: "Cambuí",
+        preco: "R$ 980.000",
+        quartos: 3,
+        banheiros: 3,
+        area: "190 m²",
+        imagem: imagensImoveis[9]
     },
 
     {
         id: 11,
-        titulo: "Apartamento Garden",
+        titulo: "Apartamento Central",
         tipo: "Apartamento",
-        finalidade: "Venda",
-        cidade: "São Bernardo do Campo",
-        bairro: "Rudge Ramos",
-        preco: "R$ 690.000",
-        quartos: "3 quartos",
-        banheiros: "2 banheiros",
-        area: "110 m²",
-        imagem: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
+        finalidade: "Aluguel",
+        cidade: "Sorocaba",
+        bairro: "Centro",
+        preco: "R$ 1.900/mês",
+        quartos: 2,
+        banheiros: 1,
+        area: "65 m²",
+        imagem: imagensImoveis[10]
     },
 
     {
         id: 12,
-        titulo: "Sobrado com Garagem",
+        titulo: "Sobrado Alto Padrão",
         tipo: "Sobrado",
         finalidade: "Venda",
-        cidade: "Osasco",
-        bairro: "City Bussocaba",
-        preco: "R$ 620.000",
-        quartos: "3 quartos",
-        banheiros: "2 banheiros",
-        area: "160 m²",
-        imagem: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=900&q=80"
+        cidade: "Barueri",
+        bairro: "Tamboré",
+        preco: "R$ 1.850.000",
+        quartos: 4,
+        banheiros: 4,
+        area: "310 m²",
+        imagem: imagensImoveis[11]
     },
 
     {
         id: 13,
-        titulo: "Studio Próximo ao Metrô",
+        titulo: "Studio Compacto",
         tipo: "Studio",
         finalidade: "Aluguel",
         cidade: "São Paulo",
-        bairro: "Liberdade",
-        preco: "R$ 2.100/mês",
-        quartos: "1 quarto",
-        banheiros: "1 banheiro",
-        area: "32 m²",
-        imagem: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80"
+        bairro: "Vila Madalena",
+        preco: "R$ 2.800/mês",
+        quartos: 1,
+        banheiros: 1,
+        area: "35 m²",
+        imagem: imagensImoveis[12]
     },
 
     {
         id: 14,
-        titulo: "Casa com Área Gourmet",
-        tipo: "Casa",
+        titulo: "Apartamento Vista Livre",
+        tipo: "Apartamento",
         finalidade: "Venda",
-        cidade: "São Caetano do Sul",
-        bairro: "Barcelona",
-        preco: "R$ 980.000",
-        quartos: "3 quartos",
-        banheiros: "3 banheiros",
-        area: "220 m²",
-        imagem: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80"
+        cidade: "Osasco",
+        bairro: "Centro",
+        preco: "R$ 590.000",
+        quartos: 3,
+        banheiros: 2,
+        area: "92 m²",
+        imagem: imagensImoveis[13]
     },
 
     {
         id: 15,
-        titulo: "Apartamento Vista Panorâmica",
-        tipo: "Apartamento",
+        titulo: "Casa em Condomínio",
+        tipo: "Casa",
         finalidade: "Venda",
-        cidade: "São Paulo",
-        bairro: "Bela Vista",
-        preco: "R$ 1.200.000",
-        quartos: "3 quartos",
-        banheiros: "2 banheiros",
-        area: "130 m²",
-        imagem: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+        cidade: "Santana de Parnaíba",
+        bairro: "Alphaville",
+        preco: "R$ 1.650.000",
+        quartos: 4,
+        banheiros: 4,
+        area: "260 m²",
+        imagem: imagensImoveis[14]
     },
 
     {
         id: 16,
-        titulo: "Casa Térrea Familiar",
-        tipo: "Casa",
+        titulo: "Apartamento Familiar",
+        tipo: "Apartamento",
         finalidade: "Aluguel",
-        cidade: "Campinas",
-        bairro: "Taquaral",
-        preco: "R$ 3.500/mês",
-        quartos: "3 quartos",
-        banheiros: "2 banheiros",
-        area: "190 m²",
-        imagem: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80"
+        cidade: "Santo André",
+        bairro: "Campestre",
+        preco: "R$ 2.700/mês",
+        quartos: 3,
+        banheiros: 2,
+        area: "90 m²",
+        imagem: imagensImoveis[15]
     },
 
     {
         id: 17,
-        titulo: "Cobertura com Terraço",
-        tipo: "Cobertura",
+        titulo: "Casa com Jardim",
+        tipo: "Casa",
         finalidade: "Venda",
-        cidade: "Santo André",
-        bairro: "Vila Assunção",
-        preco: "R$ 1.450.000",
-        quartos: "4 quartos",
-        banheiros: "3 banheiros",
-        area: "250 m²",
-        imagem: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=900&q=80"
+        cidade: "Guarulhos",
+        bairro: "Macedo",
+        preco: "R$ 720.000",
+        quartos: 3,
+        banheiros: 2,
+        area: "160 m²",
+        imagem: imagensImoveis[16]
     },
 
     {
         id: 18,
-        titulo: "Apartamento Novo",
-        tipo: "Apartamento",
-        finalidade: "Aluguel",
-        cidade: "Barueri",
-        bairro: "Centro",
-        preco: "R$ 3.200/mês",
-        quartos: "2 quartos",
-        banheiros: "2 banheiros",
-        area: "70 m²",
-        imagem: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80"
+        titulo: "Cobertura Moderna",
+        tipo: "Cobertura",
+        finalidade: "Venda",
+        cidade: "São Paulo",
+        bairro: "Moema",
+        preco: "R$ 2.100.000",
+        quartos: 4,
+        banheiros: 4,
+        area: "240 m²",
+        imagem: imagensImoveis[17]
     },
 
     {
         id: 19,
-        titulo: "Sobrado Alto Padrão",
-        tipo: "Sobrado",
+        titulo: "Apartamento Garden",
+        tipo: "Apartamento",
         finalidade: "Venda",
-        cidade: "São Paulo",
-        bairro: "Santana",
-        preco: "R$ 1.300.000",
-        quartos: "4 quartos",
-        banheiros: "4 banheiros",
-        area: "270 m²",
-        imagem: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=80"
+        cidade: "São Caetano do Sul",
+        bairro: "Barcelona",
+        preco: "R$ 890.000",
+        quartos: 3,
+        banheiros: 2,
+        area: "120 m²",
+        imagem: imagensImoveis[18]
     },
 
     {
         id: 20,
-        titulo: "Apartamento Familiar",
-        tipo: "Apartamento",
+        titulo: "Casa Ampla",
+        tipo: "Casa",
         finalidade: "Venda",
-        cidade: "Guarulhos",
-        bairro: "Gopoúva",
-        preco: "R$ 580.000",
-        quartos: "3 quartos",
-        banheiros: "2 banheiros",
-        area: "85 m²",
-        imagem: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80"
+        cidade: "Campinas",
+        bairro: "Taquaral",
+        preco: "R$ 1.090.000",
+        quartos: 4,
+        banheiros: 3,
+        area: "230 m²",
+        imagem: imagensImoveis[19]
     },
 
     {
         id: 21,
-        titulo: "Casa com Piscina",
-        tipo: "Casa",
-        finalidade: "Venda",
-        cidade: "Osasco",
-        bairro: "Quitaúna",
-        preco: "R$ 890.000",
-        quartos: "3 quartos",
-        banheiros: "3 banheiros",
-        area: "230 m²",
-        imagem: "https://images.unsplash.com/photo-1605146769289-440113cc3d00?auto=format&fit=crop&w=900&q=80"
+        titulo: "Apartamento Novo",
+        tipo: "Apartamento",
+        finalidade: "Aluguel",
+        cidade: "Sorocaba",
+        bairro: "Campolim",
+        preco: "R$ 2.300/mês",
+        quartos: 2,
+        banheiros: 2,
+        area: "72 m²",
+        imagem: imagensImoveis[20]
     },
 
     {
         id: 22,
-        titulo: "Studio Central",
-        tipo: "Studio",
-        finalidade: "Aluguel",
-        cidade: "São Paulo",
-        bairro: "Consolação",
-        preco: "R$ 2.300/mês",
-        quartos: "1 quarto",
-        banheiros: "1 banheiro",
-        area: "35 m²",
-        imagem: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80"
+        titulo: "Sobrado com Quintal",
+        tipo: "Sobrado",
+        finalidade: "Venda",
+        cidade: "Carapicuíba",
+        bairro: "Centro",
+        preco: "R$ 640.000",
+        quartos: 3,
+        banheiros: 2,
+        area: "150 m²",
+        imagem: imagensImoveis[21]
     },
 
     {
         id: 23,
-        titulo: "Apartamento Garden Premium",
+        titulo: "Apartamento Premium",
         tipo: "Apartamento",
         finalidade: "Venda",
-        cidade: "São Bernardo do Campo",
-        bairro: "Centro",
-        preco: "R$ 780.000",
-        quartos: "3 quartos",
-        banheiros: "2 banheiros",
-        area: "125 m²",
-        imagem: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=80"
+        cidade: "Barueri",
+        bairro: "Alphaville",
+        preco: "R$ 1.350.000",
+        quartos: 3,
+        banheiros: 3,
+        area: "145 m²",
+        imagem: imagensImoveis[22]
     },
 
     {
         id: 24,
-        titulo: "Casa com Quintal",
+        titulo: "Casa Residencial",
         tipo: "Casa",
         finalidade: "Aluguel",
-        cidade: "Carapicuíba",
-        bairro: "Parque Jandaia",
-        preco: "R$ 2.400/mês",
-        quartos: "3 quartos",
-        banheiros: "2 banheiros",
-        area: "150 m²",
-        imagem: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+        cidade: "Osasco",
+        bairro: "City Bussocaba",
+        preco: "R$ 3.100/mês",
+        quartos: 3,
+        banheiros: 2,
+        area: "170 m²",
+        imagem: imagensImoveis[23]
     },
 
     {
         id: 25,
-        titulo: "Cobertura Duplex Premium",
-        tipo: "Cobertura",
+        titulo: "Apartamento com Suíte",
+        tipo: "Apartamento",
         finalidade: "Venda",
-        cidade: "São Paulo",
-        bairro: "Vila Olímpia",
-        preco: "R$ 3.200.000",
-        quartos: "4 quartos",
-        banheiros: "5 banheiros",
-        area: "380 m²",
-        imagem: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80"
+        cidade: "São Bernardo do Campo",
+        bairro: "Rudge Ramos",
+        preco: "R$ 610.000",
+        quartos: 3,
+        banheiros: 2,
+        area: "88 m²",
+        imagem: imagensImoveis[24]
     },
 
     {
         id: 26,
-        titulo: "Apartamento Parque",
-        tipo: "Apartamento",
+        titulo: "Studio Central",
+        tipo: "Studio",
         finalidade: "Aluguel",
-        cidade: "Campinas",
-        bairro: "Cambuí",
-        preco: "R$ 3.000/mês",
-        quartos: "2 quartos",
-        banheiros: "2 banheiros",
-        area: "80 m²",
-        imagem: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
+        cidade: "São Paulo",
+        bairro: "Bela Vista",
+        preco: "R$ 2.500/mês",
+        quartos: 1,
+        banheiros: 1,
+        area: "31 m²",
+        imagem: imagensImoveis[25]
     },
 
     {
         id: 27,
-        titulo: "Sobrado Espaçoso",
-        tipo: "Sobrado",
+        titulo: "Casa Alto Padrão",
+        tipo: "Casa",
         finalidade: "Venda",
-        cidade: "Sorocaba",
-        bairro: "Além Ponte",
-        preco: "R$ 720.000",
-        quartos: "3 quartos",
-        banheiros: "3 banheiros",
-        area: "190 m²",
-        imagem: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=900&q=80"
+        cidade: "Santo André",
+        bairro: "Jardim Bela Vista",
+        preco: "R$ 1.450.000",
+        quartos: 4,
+        banheiros: 4,
+        area: "280 m²",
+        imagem: imagensImoveis[26]
     },
 
     {
         id: 28,
-        titulo: "Apartamento Vista Cidade",
+        titulo: "Apartamento Vista Panorâmica",
         tipo: "Apartamento",
         finalidade: "Venda",
-        cidade: "São Caetano do Sul",
+        cidade: "Guarulhos",
         bairro: "Centro",
-        preco: "R$ 850.000",
-        quartos: "3 quartos",
-        banheiros: "2 banheiros",
-        area: "105 m²",
-        imagem: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80"
+        preco: "R$ 570.000",
+        quartos: 3,
+        banheiros: 2,
+        area: "84 m²",
+        imagem: imagensImoveis[27]
     },
 
     {
         id: 29,
-        titulo: "Casa de Condomínio",
-        tipo: "Casa",
+        titulo: "Cobertura com Terraço",
+        tipo: "Cobertura",
         finalidade: "Venda",
-        cidade: "Barueri",
-        bairro: "Tamboré",
-        preco: "R$ 2.100.000",
-        quartos: "4 quartos",
-        banheiros: "4 banheiros",
-        area: "320 m²",
-        imagem: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80"
+        cidade: "Campinas",
+        bairro: "Cambuí",
+        preco: "R$ 1.750.000",
+        quartos: 4,
+        banheiros: 4,
+        area: "220 m²",
+        imagem: imagensImoveis[28]
     },
 
     {
         id: 30,
-        titulo: "Apartamento Econômico",
+        titulo: "Apartamento Completo",
         tipo: "Apartamento",
         finalidade: "Aluguel",
-        cidade: "Osasco",
-        bairro: "Km 18",
-        preco: "R$ 1.900/mês",
-        quartos: "2 quartos",
-        banheiros: "1 banheiro",
-        area: "58 m²",
-        imagem: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
+        cidade: "Sorocaba",
+        bairro: "Jardim América",
+        preco: "R$ 2.100/mês",
+        quartos: 2,
+        banheiros: 2,
+        area: "68 m²",
+        imagem: imagensImoveis[29]
     }
 
 ];
 
 
-/* =====================================================
+/* =========================================================
+   FOTOS DA GALERIA
+========================================================= */
+
+const fotosGaleria = [
+
+    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600047509782-20d39509f3f5?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1600585154363-67a0a0b7b2e1?auto=format&fit=crop&w=1400&q=85"
+
+];
+
+
+/* =========================================================
+   CRIAR GALERIAS
+========================================================= */
+
+imoveis.forEach((imovel, indice) => {
+
+    const fotos = [imovel.imagem];
+
+    let posicao =
+        (indice * 3) % fotosGaleria.length;
+
+    while (fotos.length < 5) {
+
+        const foto = fotosGaleria[posicao];
+
+        if (!fotos.includes(foto)) {
+            fotos.push(foto);
+        }
+
+        posicao =
+            (posicao + 1) %
+            fotosGaleria.length;
+
+    }
+
+    imovel.fotos = fotos;
+
+});
+
+
+/* =========================================================
    CRIAR CARD
-===================================================== */
+========================================================= */
 
 function criarCard(imovel) {
 
@@ -444,14 +548,14 @@ function criarCard(imovel) {
             onkeydown="ativarCard(event, ${imovel.id})"
         >
 
-
             <div class="property-image">
 
                 <img
                     src="${imovel.imagem}"
                     alt="${imovel.titulo}"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='${imagemFallback}'"
                 >
-
 
                 <span class="property-label">
                     ${imovel.finalidade}
@@ -459,34 +563,24 @@ function criarCard(imovel) {
 
             </div>
 
-
-
             <div class="property-info">
-
 
                 <h3>
                     ${imovel.titulo}
                 </h3>
 
-
                 <p class="property-location">
-
-                    ${imovel.bairro}
-                    ·
-                    ${imovel.cidade}
-
+                    ${imovel.bairro}, ${imovel.cidade}
                 </p>
-
-
 
                 <div class="property-details">
 
                     <span>
-                        ${imovel.quartos}
+                        ${imovel.quartos} quartos
                     </span>
 
                     <span>
-                        ${imovel.banheiros}
+                        ${imovel.banheiros} banheiros
                     </span>
 
                     <span>
@@ -495,26 +589,17 @@ function criarCard(imovel) {
 
                 </div>
 
-
-
                 <div class="property-bottom">
 
-
-                    <span class="property-price">
+                    <strong class="property-price">
                         ${imovel.preco}
-                    </span>
+                    </strong>
 
-
-                    <span
-                        class="property-arrow"
-                        aria-hidden="true"
-                    >
+                    <span class="property-arrow" aria-hidden="true">
                         →
                     </span>
 
-
                 </div>
-
 
             </div>
 
@@ -525,9 +610,9 @@ function criarCard(imovel) {
 }
 
 
-/* =====================================================
-   ACESSIBILIDADE DOS CARDS
-===================================================== */
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
 
 function ativarCard(event, id) {
 
@@ -545,199 +630,272 @@ function ativarCard(event, id) {
 }
 
 
-/* =====================================================
-   CARREGAR CARROSSEL
-===================================================== */
+/* =========================================================
+   CARROSSEL DE IMÓVEIS
+========================================================= */
 
 function carregarCarrossel() {
 
     const carousel =
         document.getElementById("carousel");
 
-
     if (!carousel) return;
-
 
     carousel.innerHTML =
         imoveis
-            .map(imovel => criarCard(imovel))
+            .map(criarCard)
             .join("");
 
 }
 
-
-/* =====================================================
-   SETAS DO CARROSSEL
-===================================================== */
 
 function rolarImoveis(direcao) {
 
     const carousel =
         document.getElementById("carousel");
 
-
     if (!carousel) return;
-
 
     const card =
         carousel.querySelector(".property-card");
 
-
     if (!card) return;
 
-
-    const larguraCard =
-        card.getBoundingClientRect().width;
-
-
-    const estilo =
-        window.getComputedStyle(carousel);
-
-
-    const gap =
-        parseFloat(estilo.columnGap) ||
-        parseFloat(estilo.gap) ||
-        20;
-
+    const gap = 20;
 
     const distancia =
-        larguraCard + gap;
-
+        card.offsetWidth + gap;
 
     carousel.scrollBy({
-
         left: distancia * direcao,
-
         behavior: "smooth"
-
     });
 
 }
 
 
-/* =====================================================
-   TODOS OS IMÓVEIS
-===================================================== */
+/* =========================================================
+   CATÁLOGO
+========================================================= */
 
 function carregarTodos() {
 
     const container =
         document.getElementById("todosImoveis");
 
-
     if (!container) return;
-
 
     container.innerHTML =
         imoveis
-            .map(imovel => criarCard(imovel))
+            .map(criarCard)
             .join("");
+
+    atualizarContador(imoveis.length);
 
 }
 
 
-/* =====================================================
-   FILTRO DO CATÁLOGO
-===================================================== */
+/* =========================================================
+   CONTADOR
+========================================================= */
+
+function atualizarContador(total) {
+
+    const contador =
+        document.getElementById("contadorImoveis");
+
+    if (!contador) return;
+
+    contador.textContent =
+        total === 1
+            ? "1 imóvel encontrado"
+            : `${total} imóveis encontrados`;
+
+}
+
+
+/* =========================================================
+   FILTRO
+========================================================= */
 
 function filtrarCatalogo() {
 
-    const cidade =
-        document.getElementById(
-            "filtroLocalizacao"
-        ).value;
+    const filtroLocalizacao =
+        document.getElementById("filtroLocalizacao");
 
+    const filtroTipo =
+        document.getElementById("filtroTipo");
+
+    const filtroFinalidade =
+        document.getElementById("filtroFinalidade");
+
+    const pesquisa =
+        document.getElementById("pesquisaImovel");
+
+    const cidade =
+        filtroLocalizacao?.value || "";
 
     const tipo =
-        document.getElementById(
-            "filtroTipo"
-        ).value;
-
+        filtroTipo?.value || "";
 
     const finalidade =
-        document.getElementById(
-            "filtroFinalidade"
-        ).value;
+        filtroFinalidade?.value || "";
+
+    const texto =
+        pesquisa?.value
+            .trim()
+            .toLowerCase() || "";
 
 
-    const filtrados =
+    const resultado =
         imoveis.filter(imovel => {
 
-            const cidadeOk =
+            const combinaCidade =
                 !cidade ||
                 imovel.cidade === cidade;
 
-
-            const tipoOk =
+            const combinaTipo =
                 !tipo ||
                 imovel.tipo === tipo;
 
-
-            const finalidadeOk =
+            const combinaFinalidade =
                 !finalidade ||
                 imovel.finalidade === finalidade;
 
 
+            const textoImovel =
+                [
+                    imovel.titulo,
+                    imovel.tipo,
+                    imovel.finalidade,
+                    imovel.cidade,
+                    imovel.bairro,
+                    imovel.preco,
+                    `${imovel.quartos} quartos`,
+                    `${imovel.banheiros} banheiros`,
+                    imovel.area
+                ]
+                    .join(" ")
+                    .toLowerCase();
+
+
+            const combinaPesquisa =
+                !texto ||
+                textoImovel.includes(texto);
+
+
             return (
-                cidadeOk &&
-                tipoOk &&
-                finalidadeOk
+                combinaCidade &&
+                combinaTipo &&
+                combinaFinalidade &&
+                combinaPesquisa
             );
 
         });
 
 
     const container =
-        document.getElementById(
-            "todosImoveis"
-        );
+        document.getElementById("todosImoveis");
+
+    if (!container) return;
 
 
-    container.innerHTML =
-        filtrados
-            .map(imovel => criarCard(imovel))
-            .join("");
+    atualizarContador(resultado.length);
 
 
-    if (filtrados.length === 0) {
+    if (resultado.length === 0) {
 
         container.innerHTML = `
 
-            <p class="no-results">
+            <div class="no-results">
 
-                Nenhum imóvel encontrado.
+                <h3>
+                    Nenhum imóvel encontrado
+                </h3>
 
-            </p>
+                <p>
+                    Tente alterar os filtros ou o termo pesquisado.
+                </p>
+
+            </div>
 
         `;
 
+        return;
+
     }
+
+
+    container.innerHTML =
+        resultado
+            .map(criarCard)
+            .join("");
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   LIMPAR FILTROS
+========================================================= */
+
+function limparFiltros() {
+
+    const localizacao =
+        document.getElementById("filtroLocalizacao");
+
+    const tipo =
+        document.getElementById("filtroTipo");
+
+    const finalidade =
+        document.getElementById("filtroFinalidade");
+
+    const pesquisa =
+        document.getElementById("pesquisaImovel");
+
+
+    if (localizacao) {
+        localizacao.value = "";
+    }
+
+    if (tipo) {
+        tipo.value = "";
+    }
+
+    if (finalidade) {
+        finalidade.value = "";
+    }
+
+    if (pesquisa) {
+        pesquisa.value = "";
+    }
+
+
+    history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+    );
+
+
+    filtrarCatalogo();
+
+}
+
+
+/* =========================================================
    BUSCA DA HOME
-===================================================== */
+========================================================= */
 
 function buscarImoveis() {
 
     const cidade =
-        document.getElementById(
-            "homeLocalizacao"
-        ).value;
-
+        document.getElementById("homeLocalizacao")?.value || "";
 
     const tipo =
-        document.getElementById(
-            "homeTipo"
-        ).value;
-
+        document.getElementById("homeTipo")?.value || "";
 
     const finalidade =
-        document.getElementById(
-            "homeFinalidade"
-        ).value;
+        document.getElementById("homeFinalidade")?.value || "";
 
 
     const params =
@@ -748,11 +906,9 @@ function buscarImoveis() {
         params.set("cidade", cidade);
     }
 
-
     if (tipo) {
         params.set("tipo", tipo);
     }
-
 
     if (finalidade) {
         params.set("finalidade", finalidade);
@@ -764,15 +920,16 @@ function buscarImoveis() {
 
 
     window.location.href =
-        "imoveis.html" +
-        (query ? "?" + query : "");
+        query
+            ? `imoveis.html?${query}`
+            : "imoveis.html";
 
 }
 
 
-/* =====================================================
-   APLICAR FILTRO VINDO DA HOME
-===================================================== */
+/* =========================================================
+   APLICAR FILTROS DA URL
+========================================================= */
 
 function aplicarFiltroDaURL() {
 
@@ -783,66 +940,67 @@ function aplicarFiltroDaURL() {
 
 
     const cidade =
-        params.get("cidade");
-
+        params.get("cidade") || "";
 
     const tipo =
-        params.get("tipo");
-
+        params.get("tipo") || "";
 
     const finalidade =
-        params.get("finalidade");
+        params.get("finalidade") || "";
 
 
-    const campoCidade =
-        document.getElementById(
-            "filtroLocalizacao"
-        );
+    const filtroLocalizacao =
+        document.getElementById("filtroLocalizacao");
+
+    const filtroTipo =
+        document.getElementById("filtroTipo");
+
+    const filtroFinalidade =
+        document.getElementById("filtroFinalidade");
 
 
-    const campoTipo =
-        document.getElementById(
-            "filtroTipo"
-        );
+    if (filtroLocalizacao && cidade) {
+        filtroLocalizacao.value = cidade;
+    }
 
+    if (filtroTipo && tipo) {
+        filtroTipo.value = tipo;
+    }
 
-    const campoFinalidade =
-        document.getElementById(
-            "filtroFinalidade"
-        );
-
-
-    if (
-        !campoCidade ||
-        !campoTipo ||
-        !campoFinalidade
-    ) {
-
-        return;
-
+    if (filtroFinalidade && finalidade) {
+        filtroFinalidade.value = finalidade;
     }
 
 
-    campoCidade.value =
-        cidade || "";
+    if (
+        filtroLocalizacao ||
+        filtroTipo ||
+        filtroFinalidade
+    ) {
 
+        filtrarCatalogo();
 
-    campoTipo.value =
-        tipo || "";
-
-
-    campoFinalidade.value =
-        finalidade || "";
-
-
-    filtrarCatalogo();
+    }
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   GALERIA
+========================================================= */
+
+let imovelAtual = null;
+
+let fotoAtual = 0;
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+
+/* =========================================================
    ABRIR IMÓVEL
-===================================================== */
+========================================================= */
 
 function abrirImovel(id) {
 
@@ -851,117 +1009,373 @@ function abrirImovel(id) {
             item => item.id === id
         );
 
-
     if (!imovel) return;
 
 
-    document.getElementById(
-        "modalImagem"
-    ).src = imovel.imagem;
+    const modal =
+        document.getElementById("modal");
+
+    if (!modal) return;
 
 
-    document.getElementById(
-        "modalImagem"
-    ).alt = imovel.titulo;
+    imovelAtual = imovel;
+
+    fotoAtual = 0;
 
 
-    document.getElementById(
-        "modalFinalidade"
-    ).textContent =
-        imovel.finalidade;
+    const modalFinalidade =
+        document.getElementById("modalFinalidade");
+
+    const modalTitulo =
+        document.getElementById("modalTitulo");
+
+    const modalLocalizacao =
+        document.getElementById("modalLocalizacao");
+
+    const modalQuartos =
+        document.getElementById("modalQuartos");
+
+    const modalBanheiros =
+        document.getElementById("modalBanheiros");
+
+    const modalArea =
+        document.getElementById("modalArea");
+
+    const modalPreco =
+        document.getElementById("modalPreco");
+
+    const modalWhatsapp =
+        document.getElementById("modalWhatsapp");
 
 
-    document.getElementById(
-        "modalTitulo"
-    ).textContent =
-        imovel.titulo;
+    if (modalFinalidade) {
+        modalFinalidade.textContent =
+            imovel.finalidade;
+    }
+
+    if (modalTitulo) {
+        modalTitulo.textContent =
+            imovel.titulo;
+    }
+
+    if (modalLocalizacao) {
+        modalLocalizacao.textContent =
+            `${imovel.bairro}, ${imovel.cidade}`;
+    }
+
+    if (modalQuartos) {
+        modalQuartos.textContent =
+            `${imovel.quartos} quartos`;
+    }
+
+    if (modalBanheiros) {
+        modalBanheiros.textContent =
+            `${imovel.banheiros} banheiros`;
+    }
+
+    if (modalArea) {
+        modalArea.textContent =
+            imovel.area;
+    }
+
+    if (modalPreco) {
+        modalPreco.textContent =
+            imovel.preco;
+    }
 
 
-    document.getElementById(
-        "modalLocalizacao"
-    ).textContent =
-        `${imovel.bairro} · ${imovel.cidade}`;
+    if (modalWhatsapp) {
+
+        const mensagem =
+            `Olá! Tenho interesse no imóvel "${imovel.titulo}" em ${imovel.cidade}.`;
+
+        modalWhatsapp.href =
+            `https://wa.me/5511999999999?text=${encodeURIComponent(mensagem)}`;
+
+    }
 
 
-    document.getElementById(
-        "modalQuartos"
-    ).textContent =
-        imovel.quartos;
+    atualizarGaleria();
 
 
-    document.getElementById(
-        "modalBanheiros"
-    ).textContent =
-        imovel.banheiros;
+    modal.classList.add("active");
 
-
-    document.getElementById(
-        "modalArea"
-    ).textContent =
-        imovel.area;
-
-
-    document.getElementById(
-        "modalPreco"
-    ).textContent =
-        imovel.preco;
-
-
-    const mensagem =
-        encodeURIComponent(
-
-            `Olá! Tenho interesse no imóvel "${imovel.titulo}" em ${imovel.bairro}, ${imovel.cidade}.`
-
-        );
-
-
-    document.getElementById(
-        "modalWhatsapp"
-    ).href =
-        `https://wa.me/5511999999999?text=${mensagem}`;
+    document.body.classList.add("modal-open");
 
 
     document
-        .getElementById("modal")
-        .classList.add("active");
+        .querySelector(".modal-close")
+        ?.focus();
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   ATUALIZAR GALERIA
+========================================================= */
+
+function atualizarGaleria() {
+
+    if (!imovelAtual) return;
+
+
+    const imagem =
+        document.getElementById("modalImagem");
+
+    const contador =
+        document.getElementById("galleryCounter");
+
+    const dots =
+        document.getElementById("galleryDots");
+
+
+    if (!imagem) return;
+
+
+    const fotos =
+        imovelAtual.fotos?.length
+            ? imovelAtual.fotos
+            : [imovelAtual.imagem];
+
+
+    if (
+        fotoAtual < 0 ||
+        fotoAtual >= fotos.length
+    ) {
+
+        fotoAtual = 0;
+
+    }
+
+
+    imagem.style.opacity = "0";
+
+
+    setTimeout(() => {
+
+        imagem.src =
+            fotos[fotoAtual];
+
+        imagem.alt =
+            `${imovelAtual.titulo} - Foto ${fotoAtual + 1}`;
+
+
+        imagem.onerror =
+            function() {
+
+                this.onerror = null;
+
+                this.src =
+                    imovelAtual.imagem ||
+                    imagemFallback;
+
+            };
+
+
+        imagem.style.opacity = "1";
+
+    }, 80);
+
+
+    if (contador) {
+
+        contador.textContent =
+            `${fotoAtual + 1} / ${fotos.length}`;
+
+    }
+
+
+    if (dots) {
+
+        dots.innerHTML = "";
+
+        fotos.forEach((_, index) => {
+
+            const dot =
+                document.createElement("span");
+
+            dot.className =
+                "gallery-dot";
+
+            if (index === fotoAtual) {
+
+                dot.classList.add("active");
+
+            }
+
+            dots.appendChild(dot);
+
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   PRÓXIMA FOTO
+========================================================= */
+
+function proximaFoto(event) {
+
+    if (event) {
+        event.stopPropagation();
+    }
+
+    if (!imovelAtual) return;
+
+
+    const fotos =
+        imovelAtual.fotos || [];
+
+    if (!fotos.length) return;
+
+
+    fotoAtual++;
+
+
+    if (fotoAtual >= fotos.length) {
+        fotoAtual = 0;
+    }
+
+
+    atualizarGaleria();
+
+}
+
+
+/* =========================================================
+   FOTO ANTERIOR
+========================================================= */
+
+function fotoAnterior(event) {
+
+    if (event) {
+        event.stopPropagation();
+    }
+
+    if (!imovelAtual) return;
+
+
+    const fotos =
+        imovelAtual.fotos || [];
+
+    if (!fotos.length) return;
+
+
+    fotoAtual--;
+
+
+    if (fotoAtual < 0) {
+        fotoAtual = fotos.length - 1;
+    }
+
+
+    atualizarGaleria();
+
+}
+
+
+/* =========================================================
+   SWIPE
+========================================================= */
+
+function configurarSwipeGaleria() {
+
+    const container =
+        document.getElementById("galleryContainer");
+
+    if (!container) return;
+
+
+    container.addEventListener(
+        "touchstart",
+        event => {
+
+            touchStartX =
+                event.changedTouches[0].screenX;
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    container.addEventListener(
+        "touchend",
+        event => {
+
+            touchEndX =
+                event.changedTouches[0].screenX;
+
+
+            const distancia =
+                touchEndX -
+                touchStartX;
+
+
+            if (
+                Math.abs(distancia) < 50
+            ) {
+                return;
+            }
+
+
+            if (distancia < 0) {
+                proximaFoto();
+            } else {
+                fotoAnterior();
+            }
+
+        },
+        {
+            passive: true
+        }
+    );
+
+}
+
+
+/* =========================================================
    FECHAR MODAL
-===================================================== */
+========================================================= */
 
 function fecharModal() {
 
     const modal =
         document.getElementById("modal");
 
-
     if (!modal) return;
 
 
     modal.classList.remove("active");
 
+    document.body.classList.remove("modal-open");
+
+
+    imovelAtual = null;
+
+    fotoAtual = 0;
+
 }
 
 
-/* =====================================================
-   CLICAR FORA DO MODAL
-===================================================== */
+/* =========================================================
+   CLICAR FORA
+========================================================= */
 
 document.addEventListener(
     "click",
-    function(event) {
+    event => {
 
         const modal =
             document.getElementById("modal");
 
+        if (!modal) return;
 
-        if (
-            modal &&
-            event.target === modal
-        ) {
+
+        if (event.target === modal) {
 
             fecharModal();
 
@@ -971,19 +1385,32 @@ document.addEventListener(
 );
 
 
-/* =====================================================
-   TECLA ESC
-===================================================== */
+/* =========================================================
+   TECLADO
+========================================================= */
 
 document.addEventListener(
     "keydown",
-    function(event) {
+    event => {
 
-        if (
-            event.key === "Escape"
-        ) {
+        if (event.key === "Escape") {
 
             fecharModal();
+
+        }
+
+        if (!imovelAtual) return;
+
+
+        if (event.key === "ArrowRight") {
+
+            proximaFoto();
+
+        }
+
+        if (event.key === "ArrowLeft") {
+
+            fotoAnterior();
 
         }
 
@@ -991,19 +1418,72 @@ document.addEventListener(
 );
 
 
-/* =====================================================
+/* =========================================================
+   FEEDBACKS
+========================================================= */
+
+function rolarFeedbacks(direcao) {
+
+    const carousel =
+        document.getElementById(
+            "feedbacksCarousel"
+        );
+
+    if (!carousel) return;
+
+
+    const card =
+        carousel.querySelector(
+            ".testimonial-card"
+        );
+
+    if (!card) return;
+
+
+    const distancia =
+        card.offsetWidth + 20;
+
+
+    carousel.scrollBy({
+
+        left:
+            distancia * direcao,
+
+        behavior:
+            "smooth"
+
+    });
+
+}
+
+
+/* =========================================================
    INICIALIZAÇÃO
-===================================================== */
+========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
-    function() {
+    () => {
 
         carregarCarrossel();
 
-        carregarTodos();
 
-        aplicarFiltroDaURL();
+        const catalogo =
+            document.getElementById(
+                "todosImoveis"
+            );
+
+
+        if (catalogo) {
+
+            carregarTodos();
+
+            aplicarFiltroDaURL();
+
+        }
+
+
+        configurarSwipeGaleria();
 
     }
 );
